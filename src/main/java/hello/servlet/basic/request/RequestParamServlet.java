@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Enumeration;
 
 @WebServlet(name = "requestParamServlet", urlPatterns = "/request-param")
 public class RequestParamServlet extends HttpServlet {
@@ -15,16 +17,9 @@ public class RequestParamServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         System.out.println("전체 파라미터 조회");
 
-        String username = req.getParameter("username");
-        System.out.println("username = " + username);
+        String[] As = req.getParameterValues("a");
 
-        String age = req.getParameter("age");
-        System.out.println("age = " + age);
-
-        String[] usernames = req.getParameterValues("username");
-        for (String name : usernames) {
-            System.out.println("name = " + name);
-        }
+        System.out.println(Arrays.toString(As));
 
         res.getWriter().write("OK");
     }
