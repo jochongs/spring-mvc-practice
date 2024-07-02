@@ -8,5 +8,5 @@ import java.io.IOException;
 
 public interface ControllerV1 {
 
-    void process(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException;
+    void process(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException;
 }
