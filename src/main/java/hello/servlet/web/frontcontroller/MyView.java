@@ -18,4 +18,11 @@ public class MyView {
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, res);
     }
+
+    public void render(ModelView mv, HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        mv.model().forEach(req::setAttribute);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
+        dispatcher.forward(req, res);
+    }
 }
