@@ -33,7 +33,7 @@ public class SpringMemberControllerV3 {
         return "save-result";
     }
 
-    @RequestMapping
+    @RequestMapping()
     public String members(Model model) {
         List<Member> members = memberRepository.findAll();
 
